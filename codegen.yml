@@ -1,0 +1,16 @@
+schema: ./src/schema/schema.graphql
+overwrite: true
+watch: true
+require:
+  - ts-node/register/transpile-only
+generates:
+  ./src/types/types.d.ts:
+    config:
+      contextType: ./src/types/types.ts:Context
+    plugins:
+      - typescript-common
+      - typescript-server
+      - typescript-resolvers
+      # - typescript-express-apollo
+      - typescript-operations
+      # - typescript-react-apollo

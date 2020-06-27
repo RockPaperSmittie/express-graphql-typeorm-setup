@@ -1,0 +1,35 @@
+type Query {
+    users: [User!]!
+    user (id: String!): User
+  }
+
+  type Mutation {
+    createUser (input: CreateUserInput!): User!
+    deleteUser (id: String!): User!
+  }
+
+  type User {
+    id: ID!
+    email: String!
+    userName: String!
+    createdDate: String!
+    firstName: String
+    lastName: String
+    profilePictureURL: String
+    dateOfBirth: String!
+  }
+
+  input CreateUserInput {
+    id: String
+    userName: String!
+    email: String!
+    firstName: String!
+    lastName: String!
+    profilePictureURL: String
+    dateOfBirth: String!
+    createdDate: String !
+  }
+
+  type Response {
+    success: Boolean!
+}
